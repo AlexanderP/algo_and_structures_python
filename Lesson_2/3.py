@@ -3,3 +3,22 @@
 цифр и вывести на экран. Например, если введено число 3486,
  то надо вывести число 6843.
 """
+
+n = int(input("Введите число: "))
+
+
+def func(n, s=''):
+    if n // 10 == 0:
+        return str(n)
+    else:
+        return str(n % 10) + func(n // 10, s)
+
+
+print(func(n))
+
+while True:
+    print(n % 10, end='')
+    n //= 10
+    if n == 0:
+        print()
+        break
