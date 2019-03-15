@@ -5,3 +5,14 @@
 (или 0, 3, 4, 5 - если индексация начинается с нуля),
 т.к. именно в этих позициях первого массива стоят четные числа.
 """
+import random
+
+array = [random.randint(1, 100) for _ in range(30)]
+array2 = []
+for i, j in enumerate(array, 1):
+    if j % 2 == 0:
+        array2.append(str(i))
+print("Данн массив:")
+print(array)
+print("Позиции четных элементов массива:")
+print(" ".join(array2))
