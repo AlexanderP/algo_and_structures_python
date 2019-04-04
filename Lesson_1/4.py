@@ -8,3 +8,26 @@
 то вводятся эти символы. Программа должна вывести на экран любой
 символ алфавита от 'a' до 'f' включительно.
 """
+
+import random
+
+answer = input("""1) сгенерировать случайное целое число
+2) сгенерировать случайное вещественное число
+3) сгенерировать случайный символ
+Ответ: """)
+
+if answer == "1":
+    a, b = input("Введите диапазон через пробел: ").split()
+    if int(a) > int(b):
+        a, b = b, a
+    print(f"Случайное целое число: {random.randint(int(a),int(b))}")
+elif answer == "2":
+    a, b = input("Введите диапазон через пробел: ").split()
+    if float(a) > float(b):
+        a, b = b, a
+    print(f"Случайное вещественное число: {random.uniform(float(a),float(b))}")
+elif answer == "3":
+    a, b = input("Введите два латинского алфавита: ").split()
+    if ord(a) > ord(b):
+        a, b = b, a
+    print(f"Случайный символ: {chr(random.randint(ord(a), ord(b)))}")
